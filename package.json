@@ -1,0 +1,19 @@
+{
+  "name": "js-collections-arraylist-and-linkedlist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TykhonchukIvan/js-collections-ArrayList-and-LinkedList.git"
+  },
+  "author": "Ivan Tykhonchuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TykhonchukIvan/js-collections-ArrayList-and-LinkedList/issues"
+  },
+  "homepage": "https://github.com/TykhonchukIvan/js-collections-ArrayList-and-LinkedList#readme"
+}

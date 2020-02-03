@@ -4,11 +4,13 @@ module.exports = {
     mode: "development",
     entry: {
         public: path.resolve(__dirname, "./src/index.js"),
-        //socket: path.resolve(__dirname, "./src/js/socket.js"),
     },
     output: {
         path: path.resolve(__dirname, "./build"),
-        filename: "index.js"
+        filename: "index.js",
+    },
+    optimization: {
+        minimize: true
     },
     devServer: {
         port: 3020,

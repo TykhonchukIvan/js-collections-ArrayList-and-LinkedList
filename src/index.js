@@ -1,2 +1,5 @@
-import { aList } from './collections/ArrayList'
+const v = require("./collections/ArrayList").test;
 
+module.exports.test1 = v;
+
+console.log(v);

@@ -17,6 +17,12 @@ function List() {
     };
     this.toLinkedList = function () {
     };
+    this.reverse = function () {
+    };
+    this.map = function () {
+    };
+    this.reduce = function () {
+    };
 }
 
 function AList() {
@@ -25,7 +31,8 @@ function AList() {
     this.length = 0;
 }
 
-export const aList = new AList();
+const aList = new AList();
+
 
 aList.size = function () {
     if (arguments.length > 0) return false;
@@ -122,8 +129,8 @@ aList.sort = function (compare) {
 };
 
 aList.toLinkedList = function () {
-    if (arguments.length > 0) return false
-    if (!this[0]) return false
+    if (arguments.length > 0) return false;
+    if (!this[0]) return false;
     let tmpLList = {
         root: {
             head: null,
@@ -153,3 +160,42 @@ aList.toLinkedList = function () {
     }
     return tmpLList
 };
+
+aList.reverse = function () {
+    let tmpArr = [];
+    let j = 0;
+    for (let i = this.collection.length - 1; i >= 0; i--) {
+        tmpArr[j] = this.collection[i];
+        j++
+    }
+    this.collection = tmpArr;
+};
+
+aList.map = function (MyFunction) {
+    if (!MyFunction) return false;
+    const arraylist = new ArrayList();
+    if (typeof MyFunction == "function")
+        for (let i = 0; i < this.size(); i++) {
+            arraylist.push(MyFunction(this.aList[i], i, this.aList));
+        }
+
+    return arraylist;
+};
+
+aList.reduce = function (MyFunction, initValue) {
+    if (!MyFunction) return 0;
+    let result = 0;
+    if (initValue) result = initValue;
+    else result = 0;
+    const newArray = this.getList();
+    if (typeof MyFunction == "function") {
+        for (let i = 0; i < this.size(); i++) {
+            result = MyFunction(result, newArray[i], i, newArray);
+        }
+    }
+    return result;
+};
+
+module.exports.test = aList;
+
+

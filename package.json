@@ -1,0 +1,38 @@
+{
+  "name": "js-collections-arraylist-and-linkedlist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TykhonchukIvan/js-collections-ArrayList-and-LinkedList.git"
+  },
+  "author": "Ivan Tykhonchuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TykhonchukIvan/js-collections-ArrayList-and-LinkedList/issues"
+  },
+  "homepage": "https://github.com/TykhonchukIvan/js-collections-ArrayList-and-LinkedList#readme",
+  "dependencies": {
+    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "path": "^0.12.7",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "mocha": "^6.2.2",
+    "mocha-webpack": "^1.1.0",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  }
+}

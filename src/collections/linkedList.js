@@ -215,4 +215,4 @@ LList.prototype.reduce = function (MyFunction, initValue) {
     return result;
 };
 
-module.exports.tess = lList;
+module.exports.lListES5 = lList;

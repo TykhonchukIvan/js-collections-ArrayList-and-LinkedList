@@ -196,6 +196,6 @@ aList.reduce = function (MyFunction, initValue) {
     return result;
 };
 
-module.exports.test = aList;
+module.exports.arrListES5 = aList;
 
 

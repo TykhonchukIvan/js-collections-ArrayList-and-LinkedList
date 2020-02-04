@@ -1,16 +1,33 @@
 class List {
-    constructor(){
-        this.push =  () => {};
-        this.pop = () => {};
-        this.unshift = () => {};
-        this.shift = () => {};
-        this.sort = () => {};
-        this.size = () => {};
-        this.toString = () => {};
-        this.clearList = () => {};
+    constructor() {
+        this.push = () => {
+        };
+        this.pop = () => {
+        };
+        this.unshift = () => {
+        };
+        this.shift = () => {
+        };
+        this.sort = () => {
+        };
+        this.size = () => {
+        };
+        this.toString = () => {
+        };
+        this.clearList = () => {
+        };
+        this.sort = () => {
+        };
+        this.toArrayList = () => {
+        };
+        this.reverse = () => {
+        };
+        this.map = () => {
+        };
+        this.reduce = () => {
+        };
     }
 }
-
 
 class LList extends List {
     root = {
@@ -18,7 +35,7 @@ class LList extends List {
         tail: null,
         length: 0,
     };
-    clearList = () =>{
+    clearList = () => {
         this.root = {
             head: null,
             tail: null,
@@ -28,7 +45,7 @@ class LList extends List {
     createNode = (el) => {
         return {
             data: el ? el : null,
-            prev : null,
+            prev: null,
             next: null,
         };
     };
@@ -36,12 +53,12 @@ class LList extends List {
         return this.root.length;
     };
     push = (el) => {
-        let node =  this.createNode(el);
+        let node = this.createNode(el);
 
-        if(!this.root.head){
+        if (!this.root.head) {
             this.root.head = node;
             this.root.tail = node;
-        }else{
+        } else {
             node.prev = this.root.tail;
             this.root.tail.next = node;
             this.root.tail = node;
@@ -58,10 +75,10 @@ class LList extends List {
     unshift = (el) => {
         let node = this.createNode(el);
 
-        if(!this.root.head){
+        if (!this.root.head) {
             this.root.head = node;
             this.root.tail = node;
-        }else{
+        } else {
             node.prev = this.root;
             this.root.head.prev = node;
             node.next = this.root.head;
@@ -72,7 +89,7 @@ class LList extends List {
     };
 
     shift = () => {
-        if(this.root.head === null) return false;
+        if (this.root.head === null) return false;
         let tmpList = this.root.head.next;
         this.root.head = tmpList;
         this.root.length--;
@@ -81,7 +98,7 @@ class LList extends List {
     toString = () => {
         let tmpString = '';
         let tmpNoda = this.root.head;
-        while(tmpNoda.next !== this.root){
+        while (tmpNoda.next !== this.root) {
             tmpString += tmpNoda.data + ',';
             tmpNoda = tmpNoda.next;
         }
@@ -90,8 +107,6 @@ class LList extends List {
 
         return tmpString
     };
-
-
 
     sort = (compare) => {
         if (compare) {
@@ -111,8 +126,7 @@ class LList extends List {
                         tmpNoda = tmpNoda.next;
                     }
                 }
-            }
-            else {
+            } else {
                 return false
             }
         } else {
@@ -135,11 +149,11 @@ class LList extends List {
     };
 
     toArrayList = () => {
-        if(this.root.head === null) return false;
+        if (this.root.head === null) return false;
         let node = this.root.head;
         let tmpArray = [];
         let i = 0;
-        while(node.next != this.root){
+        while (node.next != this.root) {
             tmpArray[i] = node.data;
             node = node.next;
             i++;
@@ -147,5 +161,50 @@ class LList extends List {
 
         return tmpArray;
     };
+
+    reverse = () => {
+        let curr = this.root.head;
+        let tmp;
+        while (curr !== this.root) {
+            tmp = curr.prev;
+            curr.prev = curr.next;
+            curr.next = tmp;
+            curr = curr.prev;
+        }
+        this.root.head = tmp;
+        this.root.head = this.root.tail
+    };
+
+    map = () => {
+        if (typeof MyFunction != "function") return this;
+        const newList = new LinkedList();
+        let Noda = this.root;
+        let i = 0;
+        while (Noda.next) {
+            Noda = Noda.next;
+            newList.push(MyFunction(Noda.el, i, LinkedList));
+            i++;
+        }
+        return newList;
+    };
+
+    reduce = (MyFunction, initValue) => {
+        if (typeof MyFunction != "function") return 0;
+        let result = 0;
+        if (initValue) result = initValue;
+        let Noda = this.root;
+        let i = 0;
+        while (Noda.next && Noda.next != null) {
+            Noda = Noda.next;
+            result = MyFunction(result, Noda.el, i, LinkedList)
+            i++;
+        }
+        return result;
+    };
+
+
 };
-const lList = new LList();
+const linkList = new LList();
+
+
+module.exports.lListES6 = linkList;

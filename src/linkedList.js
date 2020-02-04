@@ -25,8 +25,8 @@ List.prototype.clearList = function () {
 };
 
 LList.prototype = Object.create(List.prototype);
-const lList = new LList();
 
+const lList = new LList();
 
 function LList() {
     this.root = {
@@ -214,3 +214,5 @@ LList.prototype.reduce = function (MyFunction, initValue) {
     }
     return result;
 };
+
+module.exports.tess = lList;

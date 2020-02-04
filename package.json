@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,23 @@
   "bugs": {
     "url": "https://github.com/TykhonchukIvan/js-collections-ArrayList-and-LinkedList/issues"
   },
-  "homepage": "https://github.com/TykhonchukIvan/js-collections-ArrayList-and-LinkedList#readme"
+  "homepage": "https://github.com/TykhonchukIvan/js-collections-ArrayList-and-LinkedList#readme",
+  "dependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "path": "^0.12.7",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "mocha": "^6.2.2",
+    "mocha-webpack": "^1.1.0",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  }
 }

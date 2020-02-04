@@ -1,5 +1,11 @@
-const v = require("./collections/ArrayList").test;
+// <<<<<<< development_LinkedList
 
-module.exports.test1 = v;
+// // const aa = require('./linkedList').tess;
+// //
+// =======
+// const v = require("./collections/ArrayList").test;
 
-console.log(v);
+// module.exports.test1 = v;
+
+// console.log(v);
+// >>>>>>> development_collections
